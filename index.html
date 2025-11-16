@@ -15,7 +15,8 @@
         <header class="title">
 
             <img
-                src="/Workspace_Staff_Manager/assets/Gemini_Generated_Image_3ng9su3ng9su3ng9.png"alt ="">
+                src="/Workspace_Staff_Manager/assets/Gemini_Generated_Image_3ng9su3ng9su3ng9-removebg-preview.png"
+                alt="logo">
             <h2>StuffMapManager</h2>
         </header>
 
@@ -23,7 +24,7 @@
 
             <aside class="side-bar">
 
-                <h3>Unassigned Staff</h3>
+                <h5>Unassigned Staff</h5>
                 <button id="add-btn"> + Add New Worker</button>
 
                 <div class="list">
@@ -31,27 +32,12 @@
             </aside>
 
             <main class="salle">
-                <div class="salle1">
-
-                    <h4>Reception</h4>
-
-                    <select class="select" name="cars" id="cars">
-                        <option value>Choose an employee</option>
-                        <option value>Amine</option>
-                        <option value>hanae</option>
-                        <option value>nahid</option>
-                        <option value>maryem</option>
-                    </select>
-
-                    <p id="calcule"></p>
-
-                </div>
 
                 <div class="salle1">
 
-                    <h4>Conference room</h4>
+                    <h5>Reception</h5>
 
-                    <select class="select" name="cars" id="cars">
+                    <select class="select" name="employee" id="employee">
                         <option value>Choose an employee</option>
                         <option value>Amine</option>
                         <option value>hanae</option>
@@ -60,7 +46,7 @@
                     </select>
 
                     <div class="nothing">
-
+                        ⚠️ Zone empty
                     </div>
 
                     <p id="calcule"></p>
@@ -69,60 +55,95 @@
 
                 <div class="salle1">
 
-                    <h4>Reception</h4>
+                    <h5>Conference room</h5>
 
-                    <select class="select" name="cars" id="cars">
+                    <select class="select" name="employee" id="employee">
                         <option value>Choose an employee</option>
                         <option value>Amine</option>
                         <option value>hanae</option>
                         <option value>nahid</option>
                         <option value>maryem</option>
                     </select>
+
+                    <div class="nothing">
+                        ⚠️ Zone empty
+                    </div>
+
+                    <p id="calcule"></p>
+
+                </div>
+
+                <div class="salle1">
+
+                    <h5>Server room</h5>
+
+                    <select class="select" name="employee" id="employee">
+                        <option value>Choose an employee</option>
+                        <option value>Amine</option>
+                        <option value>hanae</option>
+                        <option value>nahid</option>
+                        <option value>maryem</option>
+                    </select>
+
+                    <div class="nothing">
+                        ⚠️ Zone empty
+                    </div>
 
                     <p id="calcule"></p>
 
                 </div>
                 <div class="salle1">
 
-                    <h4>Reception</h4>
+                    <h5>Security room</h5>
 
-                    <select class="select" name="cars" id="cars">
+                    <select class="select" name="employee" id="employee">
                         <option value>Choose an employee</option>
                         <option value>Amine</option>
                         <option value>hanae</option>
                         <option value>nahid</option>
                         <option value>maryem</option>
                     </select>
+
+                    <div class="nothing">
+                        ⚠️ Zone empty
+                    </div>
+
+                     <p id="calcule"> 3 employees</p>
 
                     <p id="calcule"></p>
 
                 </div>
                 <div class="salle1">
 
-                    <h4>Reception</h4>
+                    <h5>Staff room</h5>
 
-                    <select class="select" name="cars" id="cars">
+                    <select class="select" name="employee" id="employee">
                         <option value>Choose an employee</option>
                         <option value>Amine</option>
                         <option value>hanae</option>
                         <option value>nahid</option>
                         <option value>maryem</option>
                     </select>
-
+                    <div class="nothing">
+                        ⚠️ Zone empty
+                    </div>
                     <p id="calcule">3 employees</p>
 
                 </div>
                 <div class="salle1">
 
-                    <h4>Reception</h4>
+                    <h5>Archive room</h5>
 
-                    <select class="select" name="cars" id="cars">
+                    <select class="select" name="employee" id="employee">
                         <option value>Choose an employee</option>
                         <option value>Amine</option>
                         <option value>hanae</option>
                         <option value>nahid</option>
                         <option value>maryem</option>
                     </select>
+                    <div class="nothing">
+                        ⚠️ Zone empty
+                    </div>
 
                     <p id="calcule"> 3 employees</p>
 
@@ -130,13 +151,17 @@
 
                 <form class="form" id="form">
                     <label for="name">Name *</label>
-                    <input id="inputName" type="text" id="Name" name="name"
+                    <input  id="inputName" type="text" id="Name" name="name"
                         placeholder="Full Name">
 
-                    <label for="role"> Role *</label>
-                    <input id="role" type="text"
-                        name="role"
-                        placeholder="Role">
+                    <label for="name">Role *</label>
+                    <select class="role" name="role" id="role">
+                        <option value>Choose a Role</option>
+                        <option value> Réceptionnistes </option>
+                        <option value>Cme </option>
+                        <option value>security</option>
+                        <option value>Techniciens </option>
+                    </select>
 
                     <label for="email">Email *</label>
                     <input type="email" id="email" name="email"

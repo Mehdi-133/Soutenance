@@ -15,7 +15,7 @@
 body {
   height: 100vh;
   font-family: "Poppins", sans-serif;
-  
+ 
 }
 
 .title {
@@ -28,8 +28,8 @@ body {
 }
 
 .title img {
-  height: 12rem;
-  width: 12rem;
+  height: 10rem;
+  width: 10rem;
 }
 
 .title h2 {
@@ -41,7 +41,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-image: linear-gradient(to bottom, #ddd6fe, #FFFFFF);
+  background-image: linear-gradient(to bottom, #ddd6fe, #ffffff);
 }
 
 .side-bar {
@@ -55,7 +55,7 @@ body {
   overflow: hidden;
 }
 
-aside h3 {
+aside h5 {
   margin-top: 1rem;
 }
 
@@ -83,6 +83,7 @@ aside button:active {
   grid-template-rows: 1fr 1fr;
   gap: 0.8rem;
   padding: 2rem;
+  height: max-content;
 }
 
 .salle1 {
@@ -99,8 +100,6 @@ aside button:active {
   gap: 1rem;
 }
 
-
-
 .select {
   width: 80%;
   padding: 5px;
@@ -112,15 +111,24 @@ aside button:active {
   cursor: pointer;
   font-size: small;
 }
+.select:focus{
+    border: 2px solid var(--secondary);
+}
 
-.nothing{
-    width: 70%;
-    height: 7rem;
-    border: 2px dashed var(--red);
+.nothing {
+  width: 85%;
+  height: 7rem;
+  border: 2px dashed var(--red);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
 }
 
 .salle p {
   font-size: small;
+  margin-bottom: 8px;
 }
 
 .form {
@@ -154,6 +162,21 @@ aside button:active {
   background-color: var(--light);
 }
 
+
+
+.role{
+  width: 100%;
+  padding: 10px 14px;
+  font-size: small;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: var(--light);
+}
+
+.role:focus{
+      border: 2px solid var(--secondary);
+}
+
 .form button {
   width: 100%;
   margin-top: 18px;
@@ -174,3 +197,165 @@ aside button:active {
 .form button:active {
   opacity: 0.5;
 }
+
+/* mini desktop */
+
+@media screen and (min-width: 1023px) and (max-width: 1279px) {
+  aside button {
+    padding: 0.6rem 3rem;
+  }
+}
+
+/* tablet */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .salle1 {
+    width: 15rem;
+  }
+
+  .salle {
+    grid-column: 2/5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.8rem;
+    padding: 2rem;
+    height: max-content;
+  }
+
+  aside button {
+    padding: 0.4rem 2rem;
+  }
+
+  .form {
+    width: 18rem;
+    padding: 35px;
+    left: 23rem;
+  }
+
+  .form label {
+    font-weight: 300;
+    margin-top: 8px;
+    margin-bottom: 5px;
+  }
+
+  .form input {
+    padding: 8px 12px;
+  }
+
+  .form button {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}
+
+/* grand mobil */
+
+@media screen and (min-width: 625px) and (max-width: 768px  ) {
+
+  .title img {
+    height: 7rem;
+    width: 7rem;
+  }
+
+  .title h2 {
+    font-size: medium;
+  }
+  aside h5 {
+    margin-top: 1rem;
+    font-size: x-small;
+  }
+
+  aside button {
+    padding: 8px 7px;
+    font-size: x-small;
+  }
+
+  .form {
+    width: 15rem;
+    left: 18rem;
+  }
+
+  .form label {
+    font-weight: 200;
+  }
+
+  .form input {
+    padding: 6px 10px;
+  }
+
+  .form button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .salle1 {
+    width: 15rem;
+  }
+
+  .salle {
+    grid-column: 2/5;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* mini mobil */
+
+@media screen and (max-width: 625px) {
+
+  .title img {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .title h2 {
+    font-size: medium;
+  }
+  aside h5 {
+    margin-top: 1rem;
+    font-size: x-small;
+  }
+
+  aside button {
+    padding: 8px 2px;
+    font-size: x-small;
+  }
+
+  .form {
+    width: 12rem;
+    left: 5rem;
+  }
+
+  .form label {
+    font-weight: 150;
+  }
+
+  .form input {
+    padding: 6px 10px;
+  }
+
+  .form button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .salle1 {
+    width: 13rem;
+  }
+
+  .salle {
+    grid-column: 2/5;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
