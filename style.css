@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -15,7 +16,7 @@
 body {
   height: 100vh;
   font-family: "Poppins", sans-serif;
- 
+  /* overflow: hidden; */
 }
 
 .title {
@@ -23,13 +24,14 @@ body {
   justify-content: center;
   align-items: center;
   height: 5rem;
-  border: 1px solid var(--gray);
   overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .title img {
-  height: 10rem;
-  width: 10rem;
+  height: 8rem;
+  width: 8rem;
+  object-fit: cover;
 }
 
 .title h2 {
@@ -41,7 +43,6 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-image: linear-gradient(to bottom, #ddd6fe, #ffffff);
 }
 
 .side-bar {
@@ -51,12 +52,12 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
-  overflow: hidden;
+  gap: 1.2rem;
 }
 
-aside h5 {
+aside div {
   margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
 aside button {
@@ -81,16 +82,17 @@ aside button:active {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 0.8rem;
+  gap: 4rem;
   padding: 2rem;
   height: max-content;
+  background: linear-gradient(to bottom, #bde0fe, #003366);
+  /* height: 100vh; */
 }
 
-.salle1 {
+.rooms {
   border-radius: 15px;
   background-color: var(--light);
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
   border: 1px solid var(--primary);
   transition: 0.7s;
   display: flex;
@@ -98,23 +100,97 @@ aside button:active {
   align-items: center;
   padding-top: 1rem;
   gap: 1rem;
+  height: 13rem;
+
+  /* opacity: 0.6; */
 }
 
-.select {
-  width: 80%;
-  padding: 5px;
-  border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  background: #fff;
-  font-size: 15px;
-  color: #333;
-  cursor: pointer;
+#room1 {
+  background-image: url(assets/3198cd683595461f85e968e6d3cc7d09.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#room2 {
+  background-image: url(assets/7e18a84af64076ef25703629de256ce6.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#room3 {
+  background-image: url(assets/b2c33ba31c2965ff1c382d1115785260.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#room4 {
+  background-image: url(assets/d0730196ea313a2f4990dd884582439a.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#room5 {
+  background-image: url(assets/archive.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#room6 {
+  background-image: url(assets/b.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.plus {
+  padding: 6px 10px;
+  border-radius: 50%;
+  background-color: green;
+  border: none;
+  color: var(--light);
+  transition: 1s;
+}
+
+.plus:hover {
+  transform: scale(1.1);
+}
+
+.plusList {
+  position: absolute;
+  width: 15rem;
+  padding: 10px 14px;
   font-size: small;
-}
-.select:focus{
-    border: 2px solid var(--secondary);
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  background-color: var(--light);
+  left: 53%;
+  bottom: 30%;
 }
 
+.remove {
+  border-radius: 50%;
+  background-color: var(--red);
+  border: none;
+  color: var(--light);
+  transition: 1s;
+  height: 30px;
+  width: 30px;
+}
+
+.addList {
+  position: absolute;
+  height: max-content;
+  width: 350px;
+  background-color: var(--light);
+  left: 40%;
+  bottom: 20%;
+  height: 20rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid var(--primary);
+  display: none;
+}
 .nothing {
   width: 85%;
   height: 7rem;
@@ -124,11 +200,13 @@ aside button:active {
   justify-content: center;
   align-items: center;
   font-size: small;
+  background-color: #ffe4e1;
 }
 
 .salle p {
   font-size: small;
   margin-bottom: 8px;
+  display: flex;
 }
 
 .form {
@@ -136,24 +214,37 @@ aside button:active {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 350px;
+  width: 35rem;
   padding: 35px;
   background-color: var(--light);
   border: 1px solid var(--primary);
   border-radius: 12px;
-  display: none;
   position: absolute;
-  left: 31rem;
+  left: 25rem;
+  bottom: 2rem;
+  max-height: 500px;
+  overflow-y: auto;
+  display: none;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .form label {
-  font-weight: 400;
-  margin-top: 12px;
+  font-size: medium;
+  margin-top: 8px;
   margin-bottom: 6px;
   color: var(--dark);
 }
 
 .form input {
+  width: 90%;
+  padding: 10px 14px;
+  font-size: small;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: var(--light);
+}
+
+.role {
   width: 100%;
   padding: 10px 14px;
   font-size: small;
@@ -162,19 +253,8 @@ aside button:active {
   background-color: var(--light);
 }
 
-
-
-.role{
-  width: 100%;
-  padding: 10px 14px;
-  font-size: small;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  background-color: var(--light);
-}
-
-.role:focus{
-      border: 2px solid var(--secondary);
+.role:focus {
+  border: 2px solid var(--secondary);
 }
 
 .form button {
@@ -209,6 +289,19 @@ aside button:active {
 /* tablet */
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .side-bar {
+    width: 100%;
+    height: max-content;
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px solid var(--gray);
+  }
+
   .salle1 {
     width: 15rem;
   }
@@ -217,20 +310,16 @@ aside button:active {
     grid-column: 2/5;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     gap: 0.8rem;
     padding: 2rem;
     height: max-content;
   }
 
-  aside button {
-    padding: 0.4rem 2rem;
-  }
-
   .form {
-    width: 18rem;
+    width: 25rem;
     padding: 35px;
-    left: 23rem;
+    left: 20rem;
+    bottom: 0.5rem;
   }
 
   .form label {
@@ -247,12 +336,17 @@ aside button:active {
     padding: 8px 10px;
     font-size: 13px;
   }
+
+  .addList {
+    position: absolute;
+    left: 20rem;
+    bottom: -10rem;
+  }
 }
 
 /* grand mobil */
 
-@media screen and (min-width: 625px) and (max-width: 768px  ) {
-
+/* @media screen and (min-width: 625px) and (max-width: 768px) {
   .title img {
     height: 7rem;
     width: 7rem;
@@ -281,19 +375,23 @@ aside button:active {
   }
 
   .form input {
-    padding: 6px 10px;
+    padding: 8px 12px;
   }
 
   .form button {
-    padding: 6px 10px;
+    padding: 8px 12px;
     font-size: 12px;
+  }
+
+  .salle {
+    grid-template-columns: 1fr; 
   }
 
   .salle1 {
     width: 15rem;
   }
 
-  .salle {
+  .rooms {
     grid-column: 2/5;
     display: grid;
     grid-template-columns: 1fr;
@@ -302,11 +400,23 @@ aside button:active {
     flex-direction: column;
     align-items: center;
   }
-}
+} */
 
-/* mini mobil */
+/*  mobil */
 
-@media screen and (max-width: 625px) {
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .side-bar {
+    width: 100%;
+    height: max-content;
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px solid var(--gray);
+  }
 
   .title img {
     height: 6rem;
@@ -321,14 +431,10 @@ aside button:active {
     font-size: x-small;
   }
 
-  aside button {
-    padding: 8px 2px;
-    font-size: x-small;
-  }
-
   .form {
-    width: 12rem;
-    left: 5rem;
+    width: 19rem;
+    left: 3rem;
+    bottom: 1rem;
   }
 
   .form label {
@@ -344,11 +450,7 @@ aside button:active {
     font-size: 12px;
   }
 
-  .salle1 {
-    width: 13rem;
-  }
-
-  .salle {
+  .rooms {
     grid-column: 2/5;
     display: grid;
     grid-template-columns: 1fr;
@@ -356,6 +458,14 @@ aside button:active {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 15rem;
+  }
+
+  .addList {
+    position: absolute;
+    left: 5rem;
+    bottom: -30rem;
+    width: 15rem;
+    height: max-content
   }
 }
-

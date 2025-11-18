@@ -19,128 +19,24 @@
                 alt="logo">
             <h2>StuffMapManager</h2>
         </header>
-
         <div class="container">
 
             <aside class="side-bar">
 
-                <h5>Unassigned Staff</h5>
+                <div>Unassigned Staff</div>
                 <button id="add-btn"> + Add New Worker</button>
 
                 <div class="list">
                 </div>
+
             </aside>
 
             <main class="salle">
 
-                <div class="salle1">
+                <div class="rooms" id="room1">
 
                     <h5>Reception</h5>
-
-                    <select class="select" name="employee" id="employee">
-                        <option value>Choose an employee</option>
-                        <option value>Amine</option>
-                        <option value>hanae</option>
-                        <option value>nahid</option>
-                        <option value>maryem</option>
-                    </select>
-
-                    <div class="nothing">
-                        ⚠️ Zone empty
-                    </div>
-
-                    <p id="calcule"></p>
-
-                </div>
-
-                <div class="salle1">
-
-                    <h5>Conference room</h5>
-
-                    <select class="select" name="employee" id="employee">
-                        <option value>Choose an employee</option>
-                        <option value>Amine</option>
-                        <option value>hanae</option>
-                        <option value>nahid</option>
-                        <option value>maryem</option>
-                    </select>
-
-                    <div class="nothing">
-                        ⚠️ Zone empty
-                    </div>
-
-                    <p id="calcule"></p>
-
-                </div>
-
-                <div class="salle1">
-
-                    <h5>Server room</h5>
-
-                    <select class="select" name="employee" id="employee">
-                        <option value>Choose an employee</option>
-                        <option value>Amine</option>
-                        <option value>hanae</option>
-                        <option value>nahid</option>
-                        <option value>maryem</option>
-                    </select>
-
-                    <div class="nothing">
-                        ⚠️ Zone empty
-                    </div>
-
-                    <p id="calcule"></p>
-
-                </div>
-                <div class="salle1">
-
-                    <h5>Security room</h5>
-
-                    <select class="select" name="employee" id="employee">
-                        <option value>Choose an employee</option>
-                        <option value>Amine</option>
-                        <option value>hanae</option>
-                        <option value>nahid</option>
-                        <option value>maryem</option>
-                    </select>
-
-                    <div class="nothing">
-                        ⚠️ Zone empty
-                    </div>
-
-                     <p id="calcule"> 3 employees</p>
-
-                    <p id="calcule"></p>
-
-                </div>
-                <div class="salle1">
-
-                    <h5>Staff room</h5>
-
-                    <select class="select" name="employee" id="employee">
-                        <option value>Choose an employee</option>
-                        <option value>Amine</option>
-                        <option value>hanae</option>
-                        <option value>nahid</option>
-                        <option value>maryem</option>
-                    </select>
-                    <div class="nothing">
-                        ⚠️ Zone empty
-                    </div>
-                    <p id="calcule">3 employees</p>
-
-                </div>
-                <div class="salle1">
-
-                    <h5>Archive room</h5>
-
-                    <select class="select" name="employee" id="employee">
-                        <option value>Choose an employee</option>
-                        <option value>Amine</option>
-                        <option value>hanae</option>
-                        <option value>nahid</option>
-                        <option value>maryem</option>
-                    </select>
+                    <button class="plus " id="plus">+</button>
                     <div class="nothing">
                         ⚠️ Zone empty
                     </div>
@@ -149,32 +45,115 @@
 
                 </div>
 
-                <form class="form" id="form">
-                    <label for="name">Name *</label>
-                    <input  id="inputName" type="text" id="Name" name="name"
-                        placeholder="Full Name">
+                <div class="rooms" id="room2">
 
-                    <label for="name">Role *</label>
-                    <select class="role" name="role" id="role">
-                        <option value>Choose a Role</option>
-                        <option value> Réceptionnistes </option>
-                        <option value>Cme </option>
-                        <option value>security</option>
-                        <option value>Techniciens </option>
-                    </select>
+                    <h5>Conference room</h5>
+                    <button class="plus " id="plus">+</button>
 
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email"
-                        placeholder="mehdi@gmail.com">
+                    <p id="calcule"> 3 employees</p>
 
-                    <label for="phone">Number *</label>
-                    <input type="tel" id="phone" name="phone"
-                        placeholder="+212">
+                </div>
 
-                    <button id="submit" type="submit">Add</button>
-                    <button type="canceled">canceled</button>
-                </form>
+                <div class="rooms" id="room3">
 
-                <script src="main.js"></script>
-            </body>
-        </html>
+                    <h5>Server room</h5>
+                    <button class="plus " id="plus">+</button>
+                    <div class="nothing">
+                        ⚠️ Zone empty
+                    </div>
+                    <p id="calcule"> 3 employees</p>
+
+                </div>
+                <div class="rooms" id="room4">
+
+                    <h5>Security room</h5>
+                    <button class="plus " id="plus">+</button>
+                    <div class="nothing">
+                        ⚠️ Zone empty
+                    </div>
+
+                    <p id="calcule"> 3 employees</p>
+
+                </div>
+                <div class="rooms" id="room5">
+
+                    <h5>Staff room</h5>
+                    <button class="plus " id="plus">+</button>
+
+                    <p id="calcule">3 employees</p>
+
+                </div>
+                <div class="rooms" id="room6">
+
+                    <h5>Archive room</h5>
+
+                    <button class="plus " id="plus">+</button>
+                    <div class="nothing">
+                        ⚠️ Zone empty
+                    </div>
+
+                    <p id="calcule"> 3 employees</p>
+
+                </div>
+
+            </main>
+
+            <form class="form" id="form">
+                <label for="name">Name *</label>
+                <input id="inputName" type="text" id="Name" name="name"
+                    placeholder="Full Name">
+
+                <label for="name">Role *</label>
+                <select class="role" name="role" id="role">
+                    <option value>Choose a Role</option>
+                    <option value> Réceptionnistes </option>
+                    <option value>Cme </option>
+                    <option value>security</option>
+                    <option value>Techniciens </option>
+                </select>
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email"
+                    placeholder="mehdi@gmail.com">
+
+                <label for="phone">Number *</label>
+                <input type="tel" id="phone" name="phone"
+                    placeholder="+212">
+
+                <label for="photo">Photo </label>
+                <input
+                    type="url"
+                    id="photo"
+                    name="photo"
+                    placeholder="url.png">
+
+                <label for="name">Experience *</label>
+                <input id="experience" type="text" name="Experience"
+                    placeholder="your experience ">
+
+                <label for="job">Job Title</label>
+                <input type="text" id="expTitle" name="expTitle">
+
+                <label for="company">Company</label>
+                <input type="text" id="expCompany" name="expCompany">
+
+                <label for="start">Start Date</label>
+                <input type="date" id="expStart" name="expStart">
+
+                <label for="end">End Date</label>
+                <input type="date" id="expEnd" name="expEnd">
+
+                <button id="submit" type="submit">Add</button>
+                <button type="canceled" id="canceled">canceled</button>
+            </form>
+
+            <div class="addList" id="addList">
+                <p>select worker to assign</p>
+                <button class="remove " id="remove">x</button>
+
+            </div>
+            <div id="workes">
+
+            </div>
+            <script src="main.js"></script>
+        </body>
+    </html>
