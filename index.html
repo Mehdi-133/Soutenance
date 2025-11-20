@@ -16,7 +16,7 @@
         <header class="title">
 
             <img
-                src="/Workspace_Staff_Manager/assets/Gemini_Generated_Image_3ng9su3ng9su3ng9-removebg-preview.png"
+                src="/assets/Gemini_Generated_Image_3ng9su3ng9su3ng9-removebg-preview.png"
                 alt="logo">
             <h2>StuffMapManager</h2>
         </header>
@@ -113,10 +113,13 @@
                 <label for="name">Role *</label>
                 <select class="role" id="role">
                     <option value>Choose a Role</option> <option
-                        value="Réceptionnistes">Réceptionnistes</option>
+                        value="Receptionnistes">Reseption</option>
                     <option value="Cme">Cme</option>
                     <option value="security">security</option>
                     <option value="Techniciens">Techniciens</option>
+                    <option value="manager">manager</option>
+                    <option value="netoyage">netoyage</option>
+
                 </select>
                 <label for="email">Email *</label>
                 <input type="email" id="inputEmail" name="email"
@@ -161,6 +164,7 @@
 
             <div class="addList" id="addList">
                 <p>select worker to assign</p>
+                <div id="assignList"></div>
                 <button class="remove " id="remove">x</button>
 
             </div>

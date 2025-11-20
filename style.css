@@ -177,18 +177,19 @@ aside button:active {
 
 .addList {
   position: absolute;
-  height: max-content;
-  width: 350px;
+  width: 400px;
   background-color: var(--light);
-  left: 40%;
-  bottom: 20%;
-  height: 20rem;
+  left: 48%;
+  bottom: 40%;
+  height: max-content;
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
   border: 1px solid var(--primary);
   display: none;
+  
+
 }
 .nothing {
   width: 85%;
