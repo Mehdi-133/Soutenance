@@ -6,7 +6,6 @@ const plus = document.querySelectorAll(".plus");
 const remove = document.getElementById("remove");
 const canceled = document.getElementById("canceled");
 const submit = document.getElementById("submit");
-
 const inputName = document.getElementById("inputName");
 const inputEmail = document.getElementById("inputEmail");
 const inputPhone = document.getElementById("inputPhone");
@@ -17,14 +16,15 @@ const inputJob = document.getElementById("expTitle");
 const inputCompany = document.getElementById("expCompany");
 const inputStart = document.getElementById("expStart");
 const inputEnd = document.getElementById("expEnd");
-
 const waitList = document.getElementById("list");
 const details = document.getElementById("details");
 const detailsBtn = document.getElementById("detailsBtn");
 const globalInfo = document.getElementById("globalInfo");
 const closeInfo = document.getElementById("closeInfo");
+const rooms = document.querySelectorAll(".rooms");
 
-const rooms = document.querySelector(".rooms");
+
+let storedData = [];
 
 const check = {
   reception: ["receptionnistes", "manager"],
@@ -49,8 +49,6 @@ const check = {
   archive: ["manager"],
 };
 
-let storedData = [];
-
 canceled.addEventListener("click", () => {
   form.style.display = "none";
 });
@@ -72,7 +70,8 @@ plus.forEach((btn) => {
     assignList.innerHTML = "";
 
     const zoneName = btn.getAttribute("data-zone");
-    const roomContainer = btn.closest(".room"); 
+    //const roomContainer = btn.closest(".room");
+    console.log(zoneName);
 
     addList.style.display = "flex";
 
@@ -82,7 +81,7 @@ plus.forEach((btn) => {
       const allowedRoles = check[zone];
       if (!allowedRoles) return true;
       if (role === "manager") return true;
-      if (role === "netoyage" && zone !== "salle d’archives") return true;
+      if (role === "netoyage" && zone !== "archive") return true;
       return allowedRoles.includes(role);
     });
 
@@ -106,6 +105,10 @@ plus.forEach((btn) => {
         const roomCard = document.createElement("div");
         roomCard.className = "assign-card";
 
+        const removeCard = document.createElement("button");
+        removeCard.textContent = "×";
+        removeCard.className = "remove-Btn";
+
         const img = document.createElement("img");
         img.className = "assign-card-photo";
         img.src = worker.photo;
@@ -116,10 +119,34 @@ plus.forEach((btn) => {
 
         roomCard.appendChild(img);
         roomCard.appendChild(nameText);
-        rooms.appendChild(roomCard);
+        roomCard.appendChild(removeCard);
 
-        listItem.remove();
-        waitList.remove();
+        let targetRoom = null;
+        rooms.forEach((room) => {
+          if (room.getAttribute("data-room") === zoneName) {
+            targetRoom = room;
+          }
+        });
+
+        const emptyMsg = targetRoom.querySelector(".nothing");
+        if (emptyMsg) emptyMsg.style.display = "none";
+
+        targetRoom.appendChild(roomCard);
+
+        storedData = storedData.filter((w) => w.email !== worker.email);
+        display();
+        addList.style.display = "none";
+
+        removeCard.addEventListener("click", () => {
+          roomCard.remove();
+          storedData.push(worker);
+          display();
+
+          const stillCards = targetRoom.querySelectorAll(".assign-card");
+          if (stillCards.length === 0 && emptyMsg) {
+            emptyMsg.style.display = "block";
+          }
+        });
       });
     });
   });

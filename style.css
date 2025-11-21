@@ -188,8 +188,6 @@ aside button:active {
   padding: 1rem;
   border: 1px solid var(--primary);
   display: none;
-
-
 }
 .nothing {
   width: 85%;
@@ -341,7 +339,6 @@ aside button:active {
   opacity: 0.8;
 }
 
-
 .worker-card {
   display: flex;
   align-items: center;
@@ -356,12 +353,19 @@ aside button:active {
   transition: 0.2s ease;
 }
 
-
-
 .worker-remove-btn {
   position: absolute;
-  top: 0rem ;
+  top: 0rem;
   left: 2rem;
+  border: none;
+  background: transparent;
+  color: #e63946;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.remove-Btn {
   border: none;
   background: transparent;
   color: #e63946;
@@ -383,7 +387,6 @@ aside button:active {
   font-size: 14px;
 }
 
-
 .assign-card {
   display: flex;
   align-items: center;
@@ -396,8 +399,6 @@ aside button:active {
   cursor: pointer;
   transition: 0.2s ease;
 }
-
-
 
 .assign-card-photo {
   width: 26px;
@@ -482,10 +483,8 @@ aside button:active {
   }
 
   .modal-content {
-   
     left: 15rem;
     bottom: -10rem;
-  
   }
 }
 
@@ -620,10 +619,8 @@ aside button:active {
     gap: 10px;
   }
   .modal-content {
-   
     width: 300px;
     left: 4rem;
     bottom: -12rem;
-  
   }
 }
