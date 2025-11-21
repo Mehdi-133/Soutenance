@@ -11,7 +11,6 @@ const inputEmail = document.getElementById("inputEmail");
 const inputPhone = document.getElementById("inputPhone");
 const inputRole = document.getElementById("role");
 const inputPhoto = document.getElementById("photo");
-// const inputexp = document.getElementById("experience");
 const inputJob = document.getElementById("expTitle");
 const inputCompany = document.getElementById("expCompany");
 const inputStart = document.getElementById("expStart");
@@ -23,12 +22,13 @@ const globalInfo = document.getElementById("globalInfo");
 const closeInfo = document.getElementById("closeInfo");
 const rooms = document.querySelectorAll(".rooms");
 
+
 let storedData = [];
 
 const check = {
-  reception: ["receptionnistes", "manager" , "netoyage"],
+  reception: ["receptionnistes", "manager", "netoyage"],
   server: ["techniciens", "manager", "netoyage"],
-  security: ["security", "manager" , "netoyage"],
+  security: ["security", "manager", "netoyage"],
   stuff: [
     "manager",
     "techniciens",
@@ -86,7 +86,7 @@ plus.forEach((btn) => {
       const role = worker.role.toLowerCase();
       const zone = zoneName.toLowerCase();
       const allowedRoles = check[zone];
-      // if (!allowedRoles) return true;
+
       if (role === "manager") return true;
       if (role === "netoyage" && zone !== "archive") return true;
       return allowedRoles.includes(role);
@@ -129,6 +129,7 @@ plus.forEach((btn) => {
         roomCard.appendChild(removeCard);
 
         let targetRoom = null;
+
         rooms.forEach((room) => {
           if (room.getAttribute("data-room") === zoneName) {
             targetRoom = room;
@@ -185,7 +186,7 @@ submit.addEventListener("click", (e) => {
     inputPhone.value === "" ||
     inputRole.value === ""
   ) {
-    alert("Submission refused: Please fill all fields");
+    alert("Submission refused");
     return;
   }
 
@@ -268,7 +269,7 @@ function display() {
     removeBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       const indexToRemove = storedData.findIndex(
-        // (worker) => worker.email === person.email
+
         (worker) => worker.id === person.id
       );
       if (indexToRemove > -1) {

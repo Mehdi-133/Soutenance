@@ -85,11 +85,10 @@ aside button:active {
   gap: 4rem;
   padding: 2rem;
   background: linear-gradient(to bottom, #bde0fe, #003366);
-  height: calc(100vh - 5rem); 
-  overflow-y: auto; 
+  height: calc(100vh - 5rem);
+  overflow-y: auto;
   overflow-x: hidden;
 }
-
 
 .rooms {
   border-radius: 15px;
@@ -104,13 +103,17 @@ aside button:active {
   gap: 1rem;
   max-height: 13rem;
   overflow-y: scroll;
+  transition: 1s;
   /* opacity: 0.6; */
 }
 
-.rooms::-webkit-scrollbar{
-  width: 0;
+.rooms:hover {
+  transform: scale(1.05);
 }
 
+.rooms::-webkit-scrollbar {
+  width: 0;
+}
 
 #room1 {
   background-image: url(assets/3198cd683595461f85e968e6d3cc7d09.jpg);
@@ -364,22 +367,26 @@ aside button:active {
 
 .worker-remove-btn {
   position: absolute;
-  top: 0rem;
-  left: 2rem;
+  top: 0.2rem;
+  left: 7rem;
   border: none;
-  background: transparent;
-  color: #e63946;
-  font-size: 20px;
+  background-color: var(--red);
+  color: var(--light);
+  font-size: 16px;
   font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 50%;
   cursor: pointer;
 }
 
 .remove-Btn {
   border: none;
-  background: transparent;
-  color: #e63946;
-  font-size: 20px;
+  background-color: var(--red);
+  color: var(--light);
+  font-size: 16px;
   font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -400,8 +407,8 @@ aside button:active {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #fafafa;
-  border: 1px solid #ddd;
+  background: var(--light);
+  border: 1px solid var(--light);
   padding: 6px 10px;
   border-radius: 6px;
   margin-bottom: 6px;
@@ -427,7 +434,7 @@ aside button:active {
   aside button {
     padding: 0.6rem 3rem;
   }
-  body{
+  body {
     overflow: scroll;
   }
 }
@@ -435,8 +442,7 @@ aside button:active {
 /* tablet */
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-
-    body{
+  body {
     overflow: scroll;
   }
   .container {
@@ -504,11 +510,10 @@ aside button:active {
   }
 }
 
-
 /*  mobil */
 
 @media screen and (max-width: 768px) {
-    body{
+  body {
     overflow: scroll;
   }
   .container {
