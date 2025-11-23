@@ -202,6 +202,12 @@ submit.addEventListener("click", (e) => {
     return;
   }
 
+  if (inputStart.value >= inputEnd.value) {
+    inputStart.style.border = "2px solid red";
+    inputEnd.style.border = "2px solid red";
+    return;
+  } 
+
   const newUser = {
     id: Date.now(),
     name: inputName.value,
