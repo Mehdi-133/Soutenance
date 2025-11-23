@@ -154,9 +154,10 @@ plus.forEach((btn) => {
 
         storedData = storedData.filter((w) => w.id !== worker.id);
         display();
-        addList.style.display = "none";
+        addList.style.display = "none"; 
 
-        removeCard.addEventListener("click", () => {
+        removeCard.addEventListener("click", (e) => {
+          e.stopPropagation();
           roomCard.remove();
           storedData.push(worker);
           display();
