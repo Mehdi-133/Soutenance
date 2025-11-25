@@ -164,7 +164,7 @@ plus.forEach((btn) => {
 
           const stillCards = targetRoom.querySelectorAll(".assign-card");
           if (stillCards.length === 0 && empty) {
-            empty.style.display = "block";
+            empty.style.display = "flex";
           }
         });
       });
@@ -201,7 +201,7 @@ submit.addEventListener("click", (e) => {
   if (!validatePhone(inputPhone.value)) {
     inputPhone.style.border = "2px solid red";
     return;
-  }
+  } 
 
   if (inputStart.value >= inputEnd.value) {
     inputStart.style.border = "2px solid red";
